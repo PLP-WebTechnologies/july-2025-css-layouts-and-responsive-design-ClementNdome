@@ -1,0 +1,129 @@
+/* ==============================
+   General Reset & Base Styles
+   ============================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* ==============================
+   Header
+   ============================== */
+.header {
+  background: #4CAF50;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* ==============================
+   Navigation (Flexbox)
+   ============================== */
+.navbar {
+  background: #333;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.nav-links li {
+  margin: 0.5rem 1rem;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+/* ==============================
+   Main Layout (CSS Grid)
+   ============================== */
+.grid-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* content + sidebar */
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+
+.content {
+  background: #f9f9f9;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.sidebar {
+  background: #eee;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+/* ==============================
+   Flexbox Cards
+   ============================== */
+.card-container {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.card {
+  flex: 1 1 200px;
+  background: #ddd;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 6px;
+}
+
+/* ==============================
+   Footer
+   ============================== */
+.footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+/* ==============================
+   Responsive Design
+   ============================== */
+
+/* Tablet */
+@media (max-width: 900px) {
+  .grid-container {
+    grid-template-columns: 1fr; /* stack content & sidebar */
+  }
+
+  .sidebar {
+    order: -1; /* move sidebar above content */
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card-container {
+    flex-direction: column;
+  }
+}
